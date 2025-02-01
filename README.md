@@ -69,14 +69,13 @@ It is also important to take into account the relation of the variables with the
 
 [![year_made_vs_sales_price](images_readme/prefeature/sales_price_vs_features_1.png)](visualizations/prefeature/sales_price_vs_features_1.png)
 
-It can also help to identify outliers, for example, the year made of the machines. For example, in the above image, we see products that were made in the year 1000, which is not possible, hence we should remove these outliers.
+It can also help to identify outliers. For example, in the above image, we see products that were made in the year 1000, which is not possible, hence we should remove these outliers.
 
 Additionally, more trends can be seen for example:
 
 [![sales_price_trend](images_readme/prefeature/sales_price_vs_features_6.png)](visualizations/prefeature/sales_price_vs_features_6.png)
 
-Besides that, it is important to analyze the counts of the different categories of the categorical features, for example, the
-```Machine Size``` feature to see if there are any categories that are underrepresented, have a very low count or that
+Besides that, it is important to analyze the counts of the different categories of the categorical features to see if there are any categories that are underrepresented, have a very low count or that
 are undefined and, hence, should be removed or filled with the mean value:
 
 [![usage_band_counts](images_readme/prefeature/count_categorical_features_3.png)](visualizations/prefeature/count_categorical_features_3.png)
