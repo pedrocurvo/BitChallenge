@@ -1,4 +1,10 @@
-# Standard Library Imports
+"""
+Module: MachinePricePredictor.
+
+Class: MachinePricePredictor.
+Author: Pedro Curvo.
+"""
+
 import math
 import pickle
 from pathlib import Path
@@ -44,6 +50,11 @@ class MachinePricePredictor:
     """
 
     def __init__(self, data_path="data/machines.csv"):
+        """Initialize the MachinePricePredictor class.
+
+        Args:
+        data_path: str, path to the dataset file
+        """
         self.model = None
         self.preprocessor = None
         self.label_encoders = {}
@@ -61,7 +72,6 @@ class MachinePricePredictor:
         Returns:
         pd.DataFrame, loaded dataset
         """
-
         # define dtype mapping for columns
         dtype_mapping = {
             "Model Descriptor": str,
@@ -247,7 +257,6 @@ class MachinePricePredictor:
         y_test: np.array, true target values
         y_pred: np.array, predicted target values
         """
-
         # preprocess data
         print("Preprocessing data for training...")
         df = self.preprocess_data(self.df)
@@ -302,7 +311,6 @@ class MachinePricePredictor:
         Returns:
         np.array, predicted target values
         """
-
         # preprocess the data using the preprocessor that was fitted during training
         X_transformed = self.preprocessor.transform(X)
 
@@ -320,7 +328,6 @@ class MachinePricePredictor:
         y_test: np.array, true target values
         y_pred: np.array, predicted target values
         """
-
         print("Model Performance:")
         # the r2 score is the best metric for this problem since it is a regression problem and the range of values
         # is continuous and large. See more on the README.md
@@ -339,7 +346,6 @@ class MachinePricePredictor:
 
     def plot_actual_vs_predicted(self, y_test, y_pred):
         """Plot actual vs predicted values."""
-
         # ensure the directory exists, otherwise create it
         self.VISUALPATH.mkdir(parents=True, exist_ok=True)
 
@@ -353,7 +359,6 @@ class MachinePricePredictor:
 
     def plot_prediction_distribution(self, y_test, y_pred):
         """Plot prediction distribution with confidence intervals."""
-
         # ensure the directory exists, otherwise create it
         self.VISUALPATH.mkdir(parents=True, exist_ok=True)
 
@@ -391,6 +396,11 @@ class MachinePricePredictor:
         plt.savefig(f"{self.VISUALPATH}/prediction_distribution.png")
 
     def visualize(self, prefeature=True):
+        """Visualize the data before or after preprocessing.
+
+        Args:
+        prefeature: bool, whether to visualize before or after feature engineering
+        """
         df = self.df.copy()
 
         # are we visualizing before or after feature engineering?
