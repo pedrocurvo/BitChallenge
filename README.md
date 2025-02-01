@@ -141,5 +141,5 @@ The following plot can be used to visualize the test data and the predictions ma
 [![predictions_vs_test](images_readme/prediction_distribution.png)](images_readme/prediction_distribution.png)
 
 The results are satisfactory, hence there is small need to tune the hyperparameters, however, this can be done by using a
-Bayesian Optimization method, for example, Optuna, to find the best hyperparameters for the model.
+Bayesian Optimization method library, for example, Optuna, to find the best hyperparameters for the model.
 
