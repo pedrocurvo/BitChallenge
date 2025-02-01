@@ -1,0 +1,9 @@
+# bit (environment)
+bit/*
+
+# python auxiliary files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.DS_Store
